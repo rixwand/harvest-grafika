@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    scroll-padding: 80px;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .select-icon {
+    background-image: url("../public/arrowDown.svg");
+    background-repeat: no-repeat;
+    @apply appearance-none;
+    background-position: right 1px center;
+    background-size: 1.5em 1.5em;
+  }
+  .block-1 {
+    animation-delay: 0.3s;
+  }
+  .block-2 {
+    animation-delay: 1.3s;
+  }
+  .block-3 {
+    animation-delay: 2.3s;
+  }
+
+  .active::after {
+    @apply border-transparent content-['']  w-7 -bottom-1 rounded-md left-[27%] lg:border-on absolute border-b-2;
+  }
+
+  .order-button {
+    margin-top: -8px;
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, rgba(58, 161, 255, 0.85), rgba(0, 108, 208, 1))
+        border-box;
+    border: 3px solid transparent;
+    border-radius: 50px;
+    padding: 6px 20px;
+  }
+
+  .outline-button {
+    background: linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(45deg, rgba(58, 161, 255, 0.85), rgba(0, 108, 208, 1))
+        border-box;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 0px 11px 3px;
+  }
+}
