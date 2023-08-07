@@ -1,0 +1,20 @@
+version: "3.8"
+
+networks:
+  harvestnetwork:
+    name: harvestnetwork
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.20.0.0/16
+          gateway: 10.20.0.1
+
+services:
+  harvestdb:
+    container_name: harvestdb
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: icwangdi
+    networks:
+      harvestnetwork:
+        ipv4_address: 10.20.0.2

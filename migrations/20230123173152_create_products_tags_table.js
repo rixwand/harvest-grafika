@@ -9,13 +9,15 @@ exports.up = function (knex) {
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("products");
+      .inTable("products")
+      .primary();
     table
       .integer("tags_id")
       .unsigned()
       .notNullable()
       .references("id")
-      .inTable("tags");
+      .inTable("tags")
+      .primary();
   });
 };
 

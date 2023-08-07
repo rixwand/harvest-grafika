@@ -1,0 +1,18 @@
+version: "3.8"
+
+networks:
+  harvestnetwork:
+    external: true
+
+services:
+  harvestmigration:
+    container_name: harvestmigration
+    image: rixwand/knex
+    networks:
+      - harvestnetwork
+    environment:
+      DB_HOST: 10.20.0.2
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: icwangdi
+      DATABASE: harvestgrafika_db
